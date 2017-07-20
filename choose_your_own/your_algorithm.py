@@ -27,15 +27,60 @@ plt.ylabel("grade")
 plt.show()
 ################################################################################
 
-
 ### your code here!  name your classifier object clf if you want the 
 ### visualization code (prettyPicture) to show you the decision boundary
 
 
+# K nearest neighbors
+from sklearn.neighbors import KNeighborsClassifier
+
+clf = KNeighborsClassifier(n_neighbors=4)
+
+print "training..."
+clf.fit(features_train, labels_train)
+
+print "predicting..."
+predict = clf.predict(features_test)
+
+from sklearn.metrics import accuracy_score
+
+print "Accuracy: ", accuracy_score(labels_test, predict)
 
 
+# AdaBoost
+# from sklearn.ensemble import AdaBoostClassifier
+# from sklearn.tree import DecisionTreeClassifier
+#
+# tree_clf = DecisionTreeClassifier()
+# clf = AdaBoostClassifier(base_estimator=tree_clf,
+#                          n_estimators=100)
+#
+# print "training..."
+# clf.fit(features_train, labels_train)
+#
+# print "predicting..."
+# predict = clf.predict(features_test)
+#
+# from sklearn.metrics import accuracy_score
+#
+# print "Accuracy: ", accuracy_score(labels_test, predict)
 
 
+# RandomForest
+# from sklearn.ensemble import RandomForestClassifier
+#
+# clf = RandomForestClassifier(n_estimators=5,
+#                          max_depth=20, min_samples_split=3)
+#
+# print "training..."
+# clf.fit(features_train, labels_train)
+#
+# print "predicting..."
+# predict = clf.predict(features_test)
+#
+# from sklearn.metrics import accuracy_score
+#
+# print "Accuracy: ", accuracy_score(labels_test, predict)
 
 
 try:
