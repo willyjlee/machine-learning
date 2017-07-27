@@ -19,4 +19,18 @@ import pickle
 
 enron_data = pickle.load(open("../final_project/final_project_dataset.pkl", "r"))
 
+print(len(enron_data))
 
+print(len(enron_data[enron_data.keys()[0]]))
+
+c = 0
+for key in enron_data:
+    if enron_data[key]["poi"] == 1:
+        c = c + 1
+print(c)
+
+fd = open("../final_project/poi_names.txt", 'r')
+print(len(fd.readlines()))
+fd.close()
+
+print enron_data["SKILLING JEFFREY K"]
